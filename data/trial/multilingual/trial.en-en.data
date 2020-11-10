@@ -1,0 +1,90 @@
+[
+    {
+        "id": "trial.en-en.0",
+        "lemma": "recall",
+        "pos": "VERB",
+        "sentence1": "Members recalled in that connection that the Committee on earlier occasions had remarked that the absence of such cases might stem from a lack of information.",
+        "sentence2": "He recalled that his country was a young country.",
+        "start1": 8,
+        "end1": 16,
+        "start2": 3,
+        "end2": 11
+    },
+    {
+        "id": "trial.en-en.1",
+        "lemma": "recall",
+        "pos": "VERB",
+        "sentence1": "Members recalled in that connection that the Committee on earlier occasions had remarked that the absence of such cases might stem from a lack of information.",
+        "sentence2": "It recalls that the Court of Roskilde heard the complaint on 19 November 1991 and delivered its reasoned judgement on 5 May 1992.",
+        "start1": 8,
+        "end1": 16,
+        "start2": 3,
+        "end2": 10
+    },
+    {
+        "id": "trial.en-en.2",
+        "lemma": "corner",
+        "pos": "NOUN",
+        "sentence1": "We have turned the corner and returned to a period of sustained economic growth, and are moving steadily to the diversification of our economy.",
+        "sentence2": "Israel's use of the term risked painting the Israeli authorities into a corner.",
+        "start1": 19,
+        "end1": 25,
+        "start2": 72,
+        "end2": 78
+    },
+    {
+        "id": "trial.en-en.3",
+        "lemma": "corner",
+        "pos": "NOUN",
+        "sentence1": "We have turned the corner and returned to a period of sustained economic growth, and are moving steadily to the diversification of our economy.",
+        "sentence2": "If the United Nations message was to reach all corners of the globe, contacts with non-governmental organizations, the media, educational institutions and other parts of civil society were absolutely indispensable.",
+        "start1": 19,
+        "end1": 25,
+        "start2": 47,
+        "end2": 54
+    },
+    {
+        "id": "trial.en-en.4",
+        "lemma": "sector",
+        "pos": "NOUN",
+        "sentence1": "In the private sector, activities are guided by the motive to earn money.",
+        "sentence2": "The volume V of the sector is related to the area A of the cap.",
+        "start1": 15,
+        "end1": 21,
+        "start2": 20,
+        "end2": 26
+    },
+    {
+        "id": "trial.en-en.5",
+        "lemma": "sector",
+        "pos": "NOUN",
+        "sentence1": "In the private sector, activities are guided by the motive to earn money.",
+        "sentence2": "The first disk drive, the 1957 IBM 350 disk storage had ten 100 character sectors per track.",
+        "start1": 15,
+        "end1": 21,
+        "start2": 74,
+        "end2": 81
+    },
+    {
+        "id": "trial.en-en.6",
+        "lemma": "tackle",
+        "pos": "VERB",
+        "sentence1": "The label was especially applied to senior members of her government who were nevertheless outside Thatcher's inner circle and who expressed opposition to her strict monetarist policies designed to tackle inflation.",
+        "sentence2": "I tackled him about his heresies.",
+        "start1": 198,
+        "end1": 204,
+        "start2": 2,
+        "end2": 9
+    },
+    {
+        "id": "trial.en-en.7",
+        "lemma": "tackle",
+        "pos": "VERB",
+        "sentence1": "The label was especially applied to senior members of her government who were nevertheless outside Thatcher's inner circle and who expressed opposition to her strict monetarist policies designed to tackle inflation.",
+        "sentence2": "Integrative bioinformatics is one field attempting to tackle this problem by providing unified access.",
+        "start1": 198,
+        "end1": 204,
+        "start2": 54,
+        "end2": 60
+    }
+]

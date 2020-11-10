@@ -1,0 +1,90 @@
+[
+    {
+        "id": "trial.en-ar.0",
+        "lemma": "report",
+        "pos": "VERB",
+        "sentence1": "Any alterations which it is proposed to make as a result of this review are to be reported to the Interdepartmental Committee on Charter Repertory for its approval.",
+        "sentence2": "وأبلغ  أيضا  أن  وفاة  \"خوستنيانو  هورتادو  توري\"  ترجع،  حسب  التاريخ  اﻻكلينيكي،  إلى  المرض",
+        "start1": 82,
+        "end1": 90,
+        "start2": 1,
+        "end2": 5
+    },
+    {
+        "id": "trial.en-ar.1",
+        "lemma": "report",
+        "pos": "VERB",
+        "sentence1": "Any alterations which it is proposed to make as a result of this review are to be reported to the Interdepartmental Committee on Charter Repertory for its approval.",
+        "sentence2": "والمشاركون سوف يرفعون تقارير عن الحلقة إلى السلطات المختصة في بلدانهم",
+        "start1": 82,
+        "end1": 90,
+        "start2": 15,
+        "end2": 28
+    },
+    {
+        "id": "trial.en-ar.2",
+        "lemma": "yet",
+        "pos": "ADV",
+        "sentence1": "The Group also pointed out that it had in its files a total of 378 cases that had not yet been clarified.",
+        "sentence2": "وأشار  إلى  ضرورة  مواصلة  مناقشة  هذه  النقاط  ومسائل  مختارة  أخرى  ﻷن  اﻻستشعار  عن  بعد  يمثل  دون  ريب  أداة  هامة  للبلدان  النامية،  بخدف  مجاﻻت  التكنولوجيا  الناشئة  اﻷخرى،  مثل  الصناعة  الفضائية،  التي  لم  تتضح بعد  فوائدها  بالنسبة  لتلك  البلدان",
+        "start1": 86,
+        "end1": 89,
+        "start2": 223,
+        "end2": 226
+    },
+    {
+        "id": "trial.en-ar.3",
+        "lemma": "yet",
+        "pos": "ADV",
+        "sentence1": "The Group also pointed out that it had in its files a total of 378 cases that had not yet been clarified.",
+        "sentence2": "إﻻ  أنه  لم  يتم  حتى  اﻵن  وضع  أي  مبادئ  توجيهية  قانونية  واضحة  لتحديد  أي  الحاﻻت  الفردية  يمكن  أن  تكون  موضع  نظر  على  المستوى  الدولي  دون  توفر  موافقة  الدولة  المعنية (على  ضوء  ما  ورد  بيانه  أعده)",
+        "start1": 86,
+        "end1": 89,
+        "start2": 18,
+        "end2": 26
+    },
+    {
+        "id": "trial.en-ar.4",
+        "lemma": "receive",
+        "pos": "VERB",
+        "sentence1": "In the circumstances, the Committee finds that such medical attention as the author received while on death row did not violate articles 7 or 10, paragraph 1.",
+        "sentence2": "وأشارت  التقارير الواردة  أيضــا  إلـى  أن  سيرنوفودسك  قد  حوصرت  تماما  لمنع  هروب  ٠٠٠  ٤١  نسمة  يعيشون  في  المدينة  ،  من  بينهم  كثير  من  اﻷشخاص  المشردين  من  أنحاء  أخرى  من  الشيشان",
+        "start1": 84,
+        "end1": 92,
+        "start2": 17,
+        "end2": 24
+    },
+    {
+        "id": "trial.en-ar.5",
+        "lemma": "receive",
+        "pos": "VERB",
+        "sentence1": "In the circumstances, the Committee finds that such medical attention as the author received while on death row did not violate articles 7 or 10, paragraph 1.",
+        "sentence2": "وفي  عام  ١٩٩٥،  تم  تدريب  ٧٣  في  المائة  من  الحاصلين  على  زماﻻت  من  الجامعة  في  مؤسسات  البلدان  النامية؛  و  تم  تدريب  ٢٧  في  المائة  من  هم  في  مؤسسات  في  البلدان  الصناعية",
+        "start1": 84,
+        "end1": 92,
+        "start2": 48,
+        "end2": 61
+    },
+    {
+        "id": "trial.en-ar.6",
+        "lemma": "sixth",
+        "pos": "NOUN",
+        "sentence1": "Of the costs apportioned to administrative operations, one third (or one sixth of the total) is borne by the United Nations.",
+        "sentence2": "ولا  ينطبق  هذا  الزعم  إلا  على  تعاطي  الكوكايين  والهيروين  فقط،  وهو  ما  لا  يمثل  أكثر  من  سدس  حالات  إساءة  استعمال  المخدرات  حسب  تقديرات  البرنامج  ذاته",
+        "start1": 73,
+        "end1": 78,
+        "start2": 98,
+        "end2": 101
+    },
+    {
+        "id": "trial.en-ar.7",
+        "lemma": "sixth",
+        "pos": "NOUN",
+        "sentence1": "Of the costs apportioned to administrative operations, one third (or one sixth of the total) is borne by the United Nations.",
+        "sentence2": "وتمثل  صناعة  اﻷغذية  سدس  جميع  الذرى  التعريفية  في  الوﻻيات  المتحدة  حيث  تتراوح  هذه  أيضا  على  العموم  بين  ٢١  و  ٠٠١  في  المائة",
+        "start1": 73,
+        "end1": 78,
+        "start2": 22,
+        "end2": 25
+    }
+]

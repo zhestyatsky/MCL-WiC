@@ -1,0 +1,90 @@
+[
+    {
+        "id": "trial.en-fr.0",
+        "lemma": "report",
+        "pos": "VERB",
+        "sentence1": "Any alterations which it is proposed to make as a result of this review are to be reported to the Interdepartmental Committee on Charter Repertory for its approval.",
+        "sentence2": "Il a aussi été indiqué que, selon les dossiers médicaux, Justiniano Hurtado Torre était mort de maladie.",
+        "start1": 82,
+        "end1": 90,
+        "start2": 15,
+        "end2": 22
+    },
+    {
+        "id": "trial.en-fr.1",
+        "lemma": "report",
+        "pos": "VERB",
+        "sentence1": "Any alterations which it is proposed to make as a result of this review are to be reported to the Interdepartmental Committee on Charter Repertory for its approval.",
+        "sentence2": "Les participants feront rapport directement aux autorités compétentes de leurs pays.",
+        "start1": 82,
+        "end1": 90,
+        "start2": 17,
+        "end2": 31
+    },
+    {
+        "id": "trial.en-fr.2",
+        "lemma": " yet",
+        "pos": "ADV",
+        "sentence1": "The Group also pointed out that it had in its files a total of 378 cases that had not yet been clarified.",
+        "sentence2": "On a noté qu’il faudrait poursuivre les discussions sur ces points et d’autres questions sélectionnées, car la télédétection peut manifestement beaucoup apporter aux pays en développement, à la différence d’autres technologies en devenir, tels que les activités manufacturières dans l’espace, dont les avantages ne sont pas encore évidents, pour ces pays du moins.",
+        "start1": 86,
+        "end1": 89,
+        "start2": 324,
+        "end2": 330
+    },
+    {
+        "id": "trial.en-fr.3",
+        "lemma": " yet",
+        "pos": "ADV",
+        "sentence1": "The Group also pointed out that it had in its files a total of 378 cases that had not yet been clarified.",
+        "sentence2": "Toutefois, on n'a encore établi aucun critère juridique précis pour déterminer quels cas individuels peuvent être examinés à l'échelon international sans le consentement de l'Etat en cause (compte tenu de ce qui précède).",
+        "start1": 86,
+        "end1": 89,
+        "start2": 18,
+        "end2": 24
+    },
+    {
+        "id": "trial.en-fr.4",
+        "lemma": "receive",
+        "pos": "VERB",
+        "sentence1": "In the circumstances, the Committee finds that such medical attention as the author received while on death row did not violate articles 7 or 10, paragraph 1.",
+        "sentence2": "Dans ces conditions, le Comité considère qu'en ce qui concerne les soins médicaux dispensés à l'auteur lorsqu'il se trouvait dans le quartier des condamnés à mort il n'y a pas violation de l'article 7 ni du paragraphe 1 de l'article 10.",
+        "start1": 84,
+        "end1": 92,
+        "start2": 82,
+        "end2": 91
+    },
+    {
+        "id": "trial.en-fr.5",
+        "lemma": "receive",
+        "pos": "VERB",
+        "sentence1": "In the circumstances, the Committee finds that such medical attention as the author received while on death row did not violate articles 7 or 10, paragraph 1.",
+        "sentence2": "Soixante-treize pour cent d’entre eux ont reçu leur formation dans des établissements de pays en développement et 27 % dans des établissements de pays développés.",
+        "start1": 84,
+        "end1": 92,
+        "start2": 42,
+        "end2": 46
+    },
+    {
+        "id": "trial.en-fr.6",
+        "lemma": "sixth",
+        "pos": "NOUN",
+        "sentence1": "Of the costs apportioned to administrative operations, one third (or one sixth of the total) is borne by the United Nations.",
+        "sentence2": "Cette affirmation ne vaut que pour la consommation de cocaïne et d'héroïne, qui ne représente pas plus d'un sixième des cas de toxicomanie, selon les propres estimations du PNUCID.",
+        "start1": 73,
+        "end1": 78,
+        "start2": 108,
+        "end2": 115
+    },
+    {
+        "id": "trial.en-fr.7",
+        "lemma": "sixth",
+        "pos": "NOUN",
+        "sentence1": "Of the costs apportioned to administrative operations, one third (or one sixth of the total) is borne by the United Nations.",
+        "sentence2": "Aux Etats—Unis, l'industrie alimentaire compte pour un sixième des crêtes tarifaires, et les droits se situent également, pour la plupart, dans une fourchette de 12 à 100 %.",
+        "start1": 73,
+        "end1": 78,
+        "start2": 55,
+        "end2": 62
+    }
+]

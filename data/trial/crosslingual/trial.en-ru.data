@@ -1,0 +1,90 @@
+[
+    {
+        "id": "trial.en-ru.0",
+        "lemma": "report",
+        "pos": "VERB",
+        "sentence1": "Any alterations which it is proposed to make as a result of this review are to be reported to the Interdepartmental Committee on Charter Repertory for its approval.",
+        "sentence2": "Ему также сообщили, что, согласно истории болезни, смерть Хустиниано Уртадо Торре наступила в результате болезни.",
+        "start1": 82,
+        "end1": 90,
+        "start2": 10,
+        "end2": 18
+    },
+    {
+        "id": "trial.en-ru.1",
+        "lemma": "report",
+        "pos": "VERB",
+        "sentence1": "Any alterations which it is proposed to make as a result of this review are to be reported to the Interdepartmental Committee on Charter Repertory for its approval.",
+        "sentence2": "Участники представят отчеты соответствующим органам в своих странах.",
+        "start1": 82,
+        "end1": 90,
+        "start2": 10,
+        "end2": 27
+    },
+    {
+        "id": "trial.en-ru.2",
+        "lemma": "yet",
+        "pos": "ADV",
+        "sentence1": "The Group also pointed out that it had in its files a total of 378 cases that had not yet been clarified.",
+        "sentence2": "Группа также сообщила, что на данный момент в ее файлах содержится информация в общей сложности о 378 случаях, которые до сих пор не выяснены.",
+        "start1": 86,
+        "end1": 89,
+        "start2": 119,
+        "end2": 129
+    },
+    {
+        "id": "trial.en-ru.3",
+        "lemma": "yet",
+        "pos": "ADV",
+        "sentence1": "The Group also pointed out that it had in its files a total of 378 cases that had not yet been clarified.",
+        "sentence2": "Было указано на необходимость продолжить обсуждение этих вопросов и других отдельных тем, поскольку в отличие от других новых технологий, таких, как производство материалов в условиях невесомости, выгода от которых для развивающихся стран пока не очевидна, технология дистанционного зондирования, несомненно, имеет для таких стран важное значение.",
+        "start1": 86,
+        "end1": 89,
+        "start2": 239,
+        "end2": 243
+    },
+    {
+        "id": "trial.en-ru.4",
+        "lemma": "receive",
+        "pos": "VERB",
+        "sentence1": "In the circumstances, the Committee finds that such medical attention as the author received while on death row did not violate articles 7 or 10, paragraph 1.",
+        "sentence2": "С учетом этих обстоятельств Комитет устанавливает, что медицинские услуги, обеспеченные автору в период его содержания в камере смертников, не свидетельствуют о нарушении положений статьи 7 или пункта 1 статьи 10.",
+        "start1": 84,
+        "end1": 92,
+        "start2": 75,
+        "end2": 87
+    },
+    {
+        "id": "trial.en-ru.5",
+        "lemma": "receive",
+        "pos": "VERB",
+        "sentence1": "In the circumstances, the Committee finds that such medical attention as the author received while on death row did not violate articles 7 or 10, paragraph 1.",
+        "sentence2": "В полученных сообщениях также отмечается, что Серноводск был полностью блокирован и находящиеся в городе 14 000 человек, в том числе многие лица, перемещенные из других районов Чечни, не могли покинуть город.",
+        "start1": 84,
+        "end1": 92,
+        "start2": 2,
+        "end2": 12
+    },
+    {
+        "id": "trial.en-ru.6",
+        "lemma": "sixth",
+        "pos": "NOUN",
+        "sentence1": "Of the costs apportioned to administrative operations, one third (or one sixth of the total) is borne by the United Nations.",
+        "sentence2": "Это утверждение касается только употребления кокаина и героина, на долю которого приходится, по собственным оценкам ЮНДКП, не более одной шестой части случаев наркомании.",
+        "start1": 73,
+        "end1": 78,
+        "start2": 138,
+        "end2": 144
+    },
+    {
+        "id": "trial.en-ru.7",
+        "lemma": "sixth",
+        "pos": "NOUN",
+        "sentence1": "Of the costs apportioned to administrative operations, one third (or one sixth of the total) is borne by the United Nations.",
+        "sentence2": "На пищевую промышленность приходится одна шестая всех пиковых тарифов в США, размер которых в основном также составляет 12-100%.",
+        "start1": 73,
+        "end1": 78,
+        "start2": 42,
+        "end2": 48
+    }
+]

@@ -1,0 +1,90 @@
+[
+    {
+        "id": "trial.en-zh.0",
+        "lemma": "report",
+        "pos": "VERB",
+        "sentence1": "Any alterations which it is proposed to make as a result of this review are to be reported to the Interdepartmental Committee on Charter Repertory for its approval.",
+        "sentence2": "它还报告说 ，根据医疗记录，JustinianoHurtadoTorre死于疾病。",
+        "start1": 82,
+        "end1": 90,
+        "start2": 2,
+        "end2": 4
+    },
+    {
+        "id": "trial.en-zh.1",
+        "lemma": "report",
+        "pos": "VERB",
+        "sentence1": "Any alterations which it is proposed to make as a result of this review are to be reported to the Interdepartmental Committee on Charter Repertory for its approval.",
+        "sentence2": "参加者将向本国有关当局进行汇报。",
+        "start1": 82,
+        "end1": 90,
+        "start2": 11,
+        "end2": 15
+    },
+    {
+        "id": "trial.en-zh.2",
+        "lemma": "yet",
+        "pos": "ADV",
+        "sentence1": "The Group also pointed out that it had in its files a total of 378 cases that had not yet been clarified.",
+        "sentence2": "会议指出有关这些要点及其他选定问题的讨论应继续进行下去，因为遥感与其他新出现的诸如在空间环境的制造等技术领域不同，这些技术的好处对发展中国家来说还不明显，而遥感毫无疑问是发展中国家的一项重要工具。",
+        "start1": 86,
+        "end1": 89,
+        "start2": 72,
+        "end2": 73
+    },
+    {
+        "id": "trial.en-zh.3",
+        "lemma": "yet",
+        "pos": "ADV",
+        "sentence1": "The Group also pointed out that it had in its files a total of 378 cases that had not yet been clarified.",
+        "sentence2": "但是，尚  未有明确的法律框架来确定哪些个人案件可不经有关国家的同意即在国际上进行讨论(考虑到上文所述的情况)。",
+        "start1": 86,
+        "end1": 89,
+        "start2": 3,
+        "end2": 5
+    },
+    {
+        "id": "trial.en-zh.4",
+        "lemma": "receive",
+        "pos": "VERB",
+        "sentence1": "In the circumstances, the Committee finds that such medical attention as the author received while on death row did not violate articles 7 or 10, paragraph 1.",
+        "sentence2": "收到的报告还表明，Sernovodsk被完全封锁起来，使得城里14,000人(其中许多人是来自车臣其它地方的流离失所者，无法逃离。",
+        "start1": 84,
+        "end1": 92,
+        "start2": 0,
+        "end2": 2
+    },
+    {
+        "id": "trial.en-zh.5",
+        "lemma": "receive",
+        "pos": "VERB",
+        "sentence1": "In the circumstances, the Committee finds that such medical attention as the author received while on death row did not violate articles 7 or 10, paragraph 1.",
+        "sentence2": "1995年接受训练的联合国大学研究员之中有百分之七十三在发展中国家的机构里接受培训;百分之二十七在工业国家的机构接受培训。",
+        "start1": 84,
+        "end1": 92,
+        "start2": 37,
+        "end2": 39
+    },
+    {
+        "id": "trial.en-zh.6",
+        "lemma": "sixth",
+        "pos": "NOUN",
+        "sentence1": "Of the costs apportioned to administrative operations, one third (or one sixth of the total) is borne by the United Nations.",
+        "sentence2": "这种说法只适用于可卡因和海洛因的滥用问题，而根据药物管制署自己估计数，这只占毒品滥用情况的 六分之一。",
+        "start1": 73,
+        "end1": 78,
+        "start2": 46,
+        "end2": 47
+    },
+    {
+        "id": "trial.en-zh.7",
+        "lemma": "sixth",
+        "pos": "NOUN",
+        "sentence1": "Of the costs apportioned to administrative operations, one third (or one sixth of the total) is borne by the United Nations.",
+        "sentence2": "食品业在美国占所有关税峰值的六分之一，也大体处在12%至100%的范围之内。",
+        "start1": 73,
+        "end1": 78,
+        "start2": 14,
+        "end2": 15
+    }
+]

@@ -1,0 +1,90 @@
+[
+    {
+        "id": "trial.fr-fr.0",
+        "lemma": "sécurité",
+        "pos": "NOUN",
+        "sentence1": "Les autorités israéliennes ont continué à démolir des maisons pour des raisons de sécurité ou parce qu'elles avaient été construites sans permis.",
+        "sentence2": "Selon ces allégations, les forces de sécurité nigérianes auraient commis toute une série de violations des droits de l'homme.",
+        "start1": 82,
+        "end1": 90,
+        "start2": 37,
+        "end2": 45
+    },
+    {
+        "id": "trial.fr-fr.1",
+        "lemma": "sécurité",
+        "pos": "NOUN",
+        "sentence1": "Les autorités israéliennes ont continué à démolir des maisons pour des raisons de sécurité ou parce qu'elles avaient été construites sans permis.",
+        "sentence2": "Une coordination est nécessaire aussi bien en temps normal, c'est-à-dire lorsque règnent la paix et la stabilité, que lorsque la sécurité d'un pays est menacée de l'extérieur ou de l'intérieur.",
+        "start1": 82,
+        "end1": 90,
+        "start2": 129,
+        "end2": 137
+    },
+    {
+        "id": "trial.fr-fr.2",
+        "lemma": "résolution",
+        "pos": "NOUN",
+        "sentence1": "Dans sa résolution 47/203 du 22 décembre 1992, l'Assemblée générale a pris note des responsabilités supplémentaires confiées au Comité permanent du Comité mixte.",
+        "sentence2": "Le représentant pense toutefois que la Deuxième Commission n'est pas l'instance appropriée pour ce projet de résolution qui contient des éléments très politiques.",
+        "start1": 8,
+        "end1": 18,
+        "start2": 109,
+        "end2": 119
+    },
+    {
+        "id": "trial.fr-fr.3",
+        "lemma": "résolution",
+        "pos": "NOUN",
+        "sentence1": "Dans sa résolution 47/203 du 22 décembre 1992, l'Assemblée générale a pris note des responsabilités supplémentaires confiées au Comité permanent du Comité mixte.",
+        "sentence2": "Les quatre fusées destinées à mesurer les densités du plasma, en valeur absolue et avec une résolution élevée, ont été lancées deux jours clefs, l'une près de midi heure locale et l'autre à minuit.",
+        "start1": 8,
+        "end1": 18,
+        "start2": 92,
+        "end2": 102
+    },
+    {
+        "id": "trial.fr-fr.4",
+        "lemma": "salut",
+        "pos": "NOUN",
+        "sentence1": "Le comité que vous avez organisé, dit-il, ne peut pas travailler efficacement au salut de la patrie.",
+        "sentence2": "Seule la grâce, gratuitement octroyée par Dieu, peut alors accomplir l'œuvre du salut.",
+        "start1": 81,
+        "end1": 86,
+        "start2": 80,
+        "end2": 85
+    },
+    {
+        "id": "trial.fr-fr.5",
+        "lemma": "salut",
+        "pos": "NOUN",
+        "sentence1": "Le comité que vous avez organisé, dit-il, ne peut pas travailler efficacement au salut de la patrie.",
+        "sentence2": "Le salut à distance est un geste d'harmonie et de politesse, et un symbole de non-agression (en empêchant une prise de combat, par la poignée de main).",
+        "start1": 81,
+        "end1": 86,
+        "start2": 3,
+        "end2": 8
+    },
+    {
+        "id": "trial.fr-fr.6",
+        "lemma": "fracturer",
+        "pos": "VERB",
+        "sentence1": "Elle est utilisée dans bon nombre de métiers pour sa fonction première, servir de levier, notamment pour fracturer un cadenas ou une chaîne.",
+        "sentence2": "Sous la couche de régolithe finement hachée se trouve le mégaregolithe, une couche de substrat rocheux très fracturé d'une épaisseur de plusieurs kilomètres.",
+        "start1": 105,
+        "end1": 114,
+        "start2": 108,
+        "end2": 116
+    },
+    {
+        "id": "trial.fr-fr.7",
+        "lemma": "fracturer",
+        "pos": "VERB",
+        "sentence1": "Elle est utilisée dans bon nombre de métiers pour sa fonction première, servir de levier, notamment pour fracturer un cadenas ou une chaîne.",
+        "sentence2": "La barrière sociale vait commencé à se fracturer dès le début du xxe siècle et la barrière semblait s'être stabilisée durant les années 1980.",
+        "start1": 105,
+        "end1": 114,
+        "start2": 39,
+        "end2": 48
+    }
+]

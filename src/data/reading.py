@@ -1,17 +1,20 @@
 import json
 import pandas as pd
 
-from util import get_word_start_end_in_sentence
+from sklearn.model_selection import train_test_split
+
+from .util import get_word_start_end_in_sentence
 
 
 WIC_DATA = 'data/MCL-WiC/'
 SUPERGLUE_DATA = 'data/SuperGLUE-WiC/'
+COLAB_PREFIX = '/content/MCL-WiC/'
 
 
 def read_data_wic(path, read_tags=False):
     with open(path) as f:
         df = pd.DataFrame(json.load(f))
-    
+
     if read_tags:
         tags_path = path[:path.find('.data')] + '.gold'
         with open(tags_path) as f:
@@ -29,7 +32,7 @@ def read_data_superglue(path, read_tags=False):
         df['tag'] = df['tag'].replace({'T': 1, 'F': 0})
 
     df['pos'] = df['pos'].replace({'N': 'NOUN', 'V': 'VERB'})
-    
+
     id_string = path[path.rfind('/') + 1 : path.find('.data')]
     df['id'] = df.index
     df['id'] = df['id'].apply(lambda id: id_string + '_superglue.en-en.' + str(id))
@@ -39,7 +42,7 @@ def read_data_superglue(path, read_tags=False):
     df['start2'] = df.apply(lambda row: get_word_start_end_in_sentence(row)[1][0], axis=1)
     df['end2'] = df.apply(lambda row: get_word_start_end_in_sentence(row)[1][1], axis=1)
     df = df.drop(columns='word_indices')
-    
+
     return df
 
 
@@ -51,17 +54,20 @@ def lemma_train_test_split(df, test_size=0.025):
     return df_train, df_test
 
 
-def get_train_val_test():
-    df_train_wic = read_data_wic(WIC_DATA + 'training/training.en-en.data', read_tags=True)
-    df_dev_wic = read_data_wic(WIC_DATA + 'dev/multilingual/dev.en-en.data', read_tags=True)
+def get_train_val_test(on_colab=True):
+    WIC_PREFIX = COLAB_PREFIX + WIC_DATA if on_colab else WIC_DATA
+    SUPERGLUE_PREFIX = COLAB_PREFIX + SUPERGLUE_DATA if on_colab else SUPERGLUE_DATA
 
-    df_train_superglue = read_data_superglue(SUPERGLUE_DATA + 'train/train.data.txt', read_tags=True)
-    df_dev_superglue = read_data_superglue(SUPERGLUE_DATA + 'dev/dev.data.txt', read_tags=True)
-    
+    df_train_wic = read_data_wic(WIC_PREFIX + 'training/training.en-en.data', read_tags=True)
+    df_dev_wic = read_data_wic(WIC_PREFIX + 'dev/multilingual/dev.en-en.data', read_tags=True)
+
+    df_train_superglue = read_data_superglue(SUPERGLUE_PREFIX + 'train/train.data.txt', read_tags=True)
+    df_dev_superglue = read_data_superglue(SUPERGLUE_PREFIX + 'dev/dev.data.txt', read_tags=True)
+
     global_df = pd.concat([df_train_wic, df_dev_wic, df_train_superglue, df_dev_superglue], ignore_index=True)
-    
+
     df_train, df_val = lemma_train_test_split(global_df)
-    
-    df_test = read_data_wic(WIC_DATA + 'test/multilingual/test.en-en.data')
-    
+
+    df_test = read_data_wic(WIC_PREFIX + 'test/multilingual/test.en-en.data')
+
     return df_train, df_val, df_test

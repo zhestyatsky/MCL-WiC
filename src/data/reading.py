@@ -1,7 +1,7 @@
 import json
 import pandas as pd
 
-from util import get_word_start_end_in_sentence
+from .util import get_word_start_end_in_sentence
 
 
 WIC_DATA = 'data/MCL-WiC/'

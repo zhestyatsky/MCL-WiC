@@ -1,3 +1,5 @@
+import torch
+
 from pytorch_lightning import LightningModule
 from pytorch_lightning.metrics import Accuracy
 from transformers import BertModel, XLMRobertaModel, AdamW, get_linear_schedule_with_warmup

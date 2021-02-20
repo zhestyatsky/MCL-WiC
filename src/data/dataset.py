@@ -66,19 +66,20 @@ class BertDataset(Dataset):
         return input_ids, attention_masks, word_ids_indices, torch.tensor(label, dtype=torch.float)
 
 
-def get_loader(df, is_train=False, is_test=False):
+def get_loader(model_path, df, is_train=False, is_test=False):
     if is_train and is_test:
         raise RuntimeError("Data can't train and test at the same time")
     labels = get_labels(df) if not is_test else None
-    data = BertDataset(get_sentences(df), get_word_ranges(df), MAX_TOKENS, labels=labels)
+    data = BertDataset(model_path, get_sentences(df), get_word_ranges(df), MAX_TOKENS, labels=labels)
     sampler = RandomSampler(data) if is_train else None
     loader = DataLoader(data, batch_size=BATCH_SIZE, sampler=sampler)
     return loader
 
 
-def get_train_val_test_loaders(on_colab=True):
+def get_train_val_test_loaders(model_architecture, on_colab=True):
+    model_path = model_architecture["embeddings"]
     train_df, val_df, test_df = get_train_val_test_df(on_colab=on_colab)
-    train_loader = get_loader(train_df, is_train=True)
-    val_loader = get_loader(val_df)
-    test_loader = get_loader(test_df, is_test=True)
+    train_loader = get_loader(model_path, train_df, is_train=True)
+    val_loader = get_loader(model_path, val_df)
+    test_loader = get_loader(model_path, test_df, is_test=True)
     return train_loader, val_loader, test_loader

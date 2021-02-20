@@ -76,8 +76,8 @@ def get_loader(model_path, df, is_train=False, is_test=False):
     return loader
 
 
-def get_train_val_test_loaders(model_architecture, on_colab=True):
-    model_path = model_architecture["embeddings"]
+def get_train_val_test_loaders(model_description, on_colab=True):
+    model_path = model_description["embeddings"]
     train_df, val_df, test_df = get_train_val_test_df(on_colab=on_colab)
     train_loader = get_loader(model_path, train_df, is_train=True)
     val_loader = get_loader(model_path, val_df)

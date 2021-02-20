@@ -7,8 +7,6 @@ from src.data.reading import get_train_val_test_df
 from src.data.constants import INDICES_PADDING_VALUE, INDICES_PADDING_LEN, MAX_TOKENS, BATCH_SIZE
 
 
-
-
 class BertDataset(Dataset):
     def __init__(self, model_path, sentences, word_ranges, max_tokens, labels=None):
         if model_path == "bert-base-cased" or model_path == "bert-large-cased":

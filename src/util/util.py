@@ -3,7 +3,7 @@ import torch
 import random
 import numpy as np
 
-from src.data.dataset import INDICES_PADDING_VALUE
+from src.data.constants import INDICES_PADDING_VALUE
 
 
 def _find_nth_word_start_end_indices_in_sentence(sentence, n):
@@ -32,13 +32,13 @@ def seed_everything(seed=42):
     torch.backends.cudnn.benchmark = False
 
 
-def batched_index_select(t, dim, inds):
+def _batched_index_select(t, dim, inds):
     dummy = inds.unsqueeze(2).expand(inds.size(0), inds.size(1), t.size(2))
     out = t.gather(dim, dummy)  # b x e x f
     return out
 
 
-def get_mask(indices, embedding_size):
+def _get_mask(indices, embedding_size):
     mask = (indices != INDICES_PADDING_VALUE)
     mask.unsqueeze_(-1)
     mask = mask.expand(mask.shape[0], mask.shape[1], embedding_size)
@@ -47,7 +47,7 @@ def get_mask(indices, embedding_size):
 
 
 def get_tokens_embeddings(batch, indices):
-    return batched_index_select(batch, 1, indices) - get_mask(indices, batch.shape[2])
+    return _batched_index_select(batch, 1, indices) - _get_mask(indices, batch.shape[2])
 
 
 def get_max_tokens(dataset):

@@ -4,12 +4,9 @@ from transformers import BertTokenizerFast, XLMRobertaTokenizerFast
 
 from src.data.processing import get_sentences, get_word_ranges, get_labels
 from src.data.reading import get_train_val_test_df
+from src.data.constants import INDICES_PADDING_VALUE, INDICES_PADDING_LEN, MAX_TOKENS, BATCH_SIZE
 
-INDICES_PADDING_LEN = 6
-INDICES_PADDING_VALUE = 0
 
-MAX_TOKENS = 118
-BATCH_SIZE = 8
 
 
 class BertDataset(Dataset):

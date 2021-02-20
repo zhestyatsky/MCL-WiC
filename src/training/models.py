@@ -4,12 +4,7 @@ from transformers import BertModel, XLMRobertaModel, AdamW, get_linear_schedule_
 from torch import nn
 
 from src.util.util import get_tokens_embeddings
-from src.training.trainer import EPOCHS
-from src.data.dataset import BATCH_SIZE
-
-# This is very strange but let it be here
-LEN_TRAIN_DATA = 14680
-TOTAL_STEPS = (LEN_TRAIN_DATA // BATCH_SIZE + 1) * EPOCHS
+from src.data.constants import TOTAL_STEPS
 
 
 class GeneralBertClassifier(LightningModule):
@@ -63,7 +58,7 @@ class GeneralBertClassifier(LightningModule):
         loss = self.loss(outputs, labels)
         self.log("val_loss", loss, prog_bar=True)
 
-    def validation_epoch_end(self, outs):
+    def validation_epoch_end(self, _):
         self.log("val_acc_epoch", self.valid_accuracy.compute(), prog_bar=True)
 
     def on_test_epoch_start(self):

@@ -1,7 +1,7 @@
 from pytorch_lightning import Trainer
 from pytorch_lightning.callbacks import EarlyStopping
 
-EPOCHS = 8
+from src.data.constants import EPOCHS
 
 
 def get_trainer():

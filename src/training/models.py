@@ -96,7 +96,7 @@ class CosineSimilarityClassifier(GeneralBertClassifier):
         second_word_embedding = self._get_embeddings(input_ids[1], attention_mask[1], word_indices[1], add_cls=False)
 
         outputs = self.cos(first_word_embedding, second_word_embedding)
-        outputs = self.relu(outputs)
+        outputs = self.activation(outputs)
         return outputs
 
 

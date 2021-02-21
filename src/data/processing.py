@@ -10,3 +10,6 @@ def get_word_ranges(df):
 def get_labels(df):
     return df["tag"].tolist()
 
+
+def get_ids(df):
+    return df["id"].tolist()

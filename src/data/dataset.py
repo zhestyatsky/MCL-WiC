@@ -2,13 +2,13 @@ import torch
 from torch.utils.data import Dataset, RandomSampler, DataLoader
 from transformers import BertTokenizerFast, XLMRobertaTokenizerFast
 
-from src.data.processing import get_sentences, get_word_ranges, get_labels
+from src.data.processing import get_ids, get_sentences, get_word_ranges, get_labels
 from src.data.reading import get_train_val_test_df
 from src.data.constants import INDICES_PADDING_VALUE, INDICES_PADDING_LEN, MAX_TOKENS, BATCH_SIZE
 
 
 class BertDataset(Dataset):
-    def __init__(self, model_path, sentences, word_ranges, max_tokens, labels=None):
+    def __init__(self, model_path, ids, sentences, word_ranges, max_tokens, labels=None):
         if model_path == "bert-base-cased" or model_path == "bert-large-cased":
             self.tokenizer = BertTokenizerFast.from_pretrained(model_path)
         elif model_path == "xlm-roberta-large":
@@ -16,6 +16,7 @@ class BertDataset(Dataset):
         else:
             raise RuntimeError("Specify correct embeddings: " + model_path)
 
+        self.ids = ids
         self.sentences = sentences
         self.word_ranges = word_ranges
         self.labels = labels
@@ -42,7 +43,7 @@ class BertDataset(Dataset):
         return torch.tensor(indices)
 
     def __len__(self):
-        return len(self.sentences)
+        return len(self.ids)
 
     def __getitem__(self, index):
         first_sentence, second_sentence = self.sentences[index]
@@ -70,7 +71,7 @@ def get_loader(model_path, df, is_train=False, is_test=False):
     if is_train and is_test:
         raise RuntimeError("Data can't train and test at the same time")
     labels = get_labels(df) if not is_test else None
-    data = BertDataset(model_path, get_sentences(df), get_word_ranges(df), MAX_TOKENS, labels=labels)
+    data = BertDataset(model_path, get_ids(df), get_sentences(df), get_word_ranges(df), MAX_TOKENS, labels=labels)
     sampler = RandomSampler(data) if is_train else None
     loader = DataLoader(data, batch_size=BATCH_SIZE, sampler=sampler)
     return loader

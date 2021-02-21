@@ -63,7 +63,7 @@ class BertDataset(Dataset):
 
         label = self.labels[index] if self.labels is not None else 2
 
-        return input_ids, attention_masks, word_ids_indices, torch.tensor(label, dtype=torch.float)
+        return input_ids, attention_masks, word_ids_indices, torch.tensor(label)
 
 
 def get_loader(model_path, df, is_train=False, is_test=False):

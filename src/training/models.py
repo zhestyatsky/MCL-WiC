@@ -52,7 +52,7 @@ class GeneralBertClassifier(LightningModule):
     def validation_step(self, batch, _):
         inputs, attn, word_indices, labels = batch
         outputs = self(inputs, attn, word_indices)
-        logits = (outputs > self.threshold).float()
+        logits = (outputs > self.threshold).long()
 
         self.valid_accuracy.update(logits, labels)
         self.log("val_acc", self.valid_accuracy)

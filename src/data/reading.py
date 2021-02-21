@@ -3,8 +3,7 @@ import pandas as pd
 
 from sklearn.model_selection import train_test_split
 
-from .util import get_word_start_end_in_sentence
-
+from src.util.util import get_word_start_end_in_sentence
 
 WIC_DATA = 'data/MCL-WiC/'
 SUPERGLUE_DATA = 'data/SuperGLUE-WiC/'
@@ -24,6 +23,7 @@ def read_data_wic(path, read_tags=False):
     df['lemma'] = df['lemma'].apply(lambda lemma: lemma.lower())
     return df
 
+
 def read_data_superglue(path, read_tags=False):
     df = pd.read_csv(path, sep='\t', names=['lemma', 'pos', 'word_indices', 'sentence1', 'sentence2'])
     if read_tags:
@@ -33,7 +33,7 @@ def read_data_superglue(path, read_tags=False):
 
     df['pos'] = df['pos'].replace({'N': 'NOUN', 'V': 'VERB'})
 
-    id_string = path[path.rfind('/') + 1 : path.find('.data')]
+    id_string = path[path.rfind('/') + 1: path.find('.data')]
     df['id'] = df.index
     df['id'] = df['id'].apply(lambda id: id_string + '_superglue.en-en.' + str(id))
 
@@ -54,7 +54,7 @@ def lemma_train_test_split(df, test_size=0.025):
     return df_train, df_test
 
 
-def get_train_val_test(on_colab=True):
+def get_train_val_test_df(on_colab=True):
     WIC_PREFIX = COLAB_PREFIX + WIC_DATA if on_colab else WIC_DATA
     SUPERGLUE_PREFIX = COLAB_PREFIX + SUPERGLUE_DATA if on_colab else SUPERGLUE_DATA
 

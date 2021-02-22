@@ -2,6 +2,7 @@ import os
 import torch
 import random
 import numpy as np
+from pytorch_lightning.metrics import Accuracy
 
 from src.data.constants import INDICES_PADDING_VALUE
 
@@ -65,3 +66,9 @@ def get_max_offset_mappings(dataset):
         mappings = max(mappings, word_ids_indices[0].tolist().index(INDICES_PADDING_VALUE, 1),
                        word_ids_indices[1].tolist().index(INDICES_PADDING_VALUE, 1))
     return mappings
+
+
+def get_accuracy(labels, probas, threshold):
+    y_pred = (probas > threshold).float()
+    acc = Accuracy()
+    return acc(y_pred, torch.tensor(labels)).item()

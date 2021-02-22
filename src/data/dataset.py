@@ -12,7 +12,7 @@ class BertDataset(Dataset):
     def __init__(self, model_path, ids, sentences, word_ranges, max_tokens, labels=None):
         if model_path == "bert-base-cased" or model_path == "bert-large-cased":
             self.tokenizer = BertTokenizerFast.from_pretrained(model_path)
-        elif model_path == "xlm-roberta-large":
+        elif model_path == "xlm-roberta-large" or model_path == "xlm-roberta-base":
             self.tokenizer = XLMRobertaTokenizerFast.from_pretrained(model_path)
         else:
             raise RuntimeError("Specify correct embeddings: " + model_path)

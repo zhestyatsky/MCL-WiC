@@ -1,7 +1,8 @@
 EMBEDDINGS = {
-    "roberta-large": "xlm-roberta-large",
+    "bert-base": "bert-base-cased",
     "bert-large": "bert-large-cased",
-    "bert-base": "bert-base-cased"
+    "roberta-base": "xlm-roberta-base",
+    "roberta-large": "xlm-roberta-large"
 }
 
 TOP = {
@@ -10,18 +11,22 @@ TOP = {
 }
 
 VALID_DESCRIPTIONS = {
-    "roberta-large-linear-no_cls",
-    "roberta-large-linear-cls",
-    "bert-base-linear-no_cls",
-    "bert-base-linear-cls",
-    "bert-large-linear-no_cls",
-    "bert-large-linear-cls",
-    "roberta-large-cos_sim-sigmoid",
-    "roberta-large-cos_sim-relu",
     "bert-base-cos_sim-sigmoid",
     "bert-base-cos_sim-relu",
+    "bert-base-linear-no_cls",
+    "bert-base-linear-cls",
     "bert-large-cos_sim-sigmoid",
     "bert-large-cos_sim-relu",
+    "bert-large-linear-no_cls",
+    "bert-large-linear-cls",
+    "roberta-base-cos_sim-sigmoid",
+    "roberta-base-cos_sim-relu",
+    "roberta-base-linear-no_cls",
+    "roberta-base-linear-cls",
+    "roberta-large-cos_sim-sigmoid",
+    "roberta-large-cos_sim-relu",
+    "roberta-large-linear-no_cls",
+    "roberta-large-linear-cls"
 }
 
 

@@ -17,7 +17,7 @@ def write_outputs(results, model_description, output_dir, threshold=0.5):
     outputs = {"model": model_description, "threshold": str(threshold), "results": results}
 
     with open(outputs_path, 'w') as f:
-        f.write(json.dumps(outputs))
+        f.write(json.dumps(outputs, indent=4))
 
 
 def convert_to_gold(results):

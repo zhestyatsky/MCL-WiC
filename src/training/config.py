@@ -9,7 +9,7 @@ TOP = {
     "cos_sim": "cosine_similarity"
 }
 
-VALID_DESCRIPTIONS = [
+VALID_DESCRIPTIONS = {
     "roberta-large-linear-no_cls",
     "roberta-large-linear-cls",
     "bert-base-linear-no_cls",
@@ -20,9 +20,9 @@ VALID_DESCRIPTIONS = [
     "roberta-large-cos_sim-relu",
     "bert-base-cos_sim-sigmoid",
     "bert-base-cos_sim-relu",
-    "bert-large-cos_sim-sigmoid"
+    "bert-large-cos_sim-sigmoid",
     "bert-large-cos_sim-relu",
-]
+}
 
 
 def get_config(model_description):

@@ -7,6 +7,7 @@ from torch import nn
 
 from src.util.util import get_tokens_embeddings
 from src.data.constants import TOTAL_STEPS
+from src.training.config import get_config
 
 
 class GeneralBertClassifier(LightningModule):
@@ -147,16 +148,18 @@ class LinearClassifier(GeneralBertClassifier):
 
 
 def get_model(model_description):
-    model_path = model_description["embeddings"]
-    architecture = model_description["architecture"]
+    model_config = get_config(model_description)
 
-    if architecture == "linear":
-        use_cls = model_description["use_cls"]
+    model_path = model_config["embeddings"]
+    top = model_config["top"]
+
+    if top == "linear":
+        use_cls = model_config["use_cls"]
         return LinearClassifier(model_path, use_cls)
 
-    if architecture == "cosine_similarity":
+    if top == "cosine_similarity":
         BASELINE_THRESHOLD = 0.5195
-        activation = model_description["activation"]
+        activation = model_config["activation"]
         return CosineSimilarityClassifier(model_path, activation, BASELINE_THRESHOLD)
 
-    raise RuntimeError("Unknown architecture: " + str(model_description))
+    raise RuntimeError("Unknown description: {}".format(model_description))

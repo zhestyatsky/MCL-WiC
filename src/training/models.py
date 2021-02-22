@@ -49,10 +49,14 @@ class GeneralBertClassifier(LightningModule):
         outputs = self(inputs, attn, word_indices)
         return self.loss(outputs, labels)
 
+    def _get_logits(self, outputs):
+        raise RuntimeError("Override me")
+
     def validation_step(self, batch, _):
         inputs, attn, word_indices, labels = batch
         outputs = self(inputs, attn, word_indices)
-        logits = (outputs > self.threshold).float()
+
+        logits = self._get_logits(outputs)
 
         self.valid_accuracy.update(logits, labels.int())
         self.log("val_acc", self.valid_accuracy)
@@ -91,6 +95,9 @@ class CosineSimilarityClassifier(GeneralBertClassifier):
         self.threshold = threshold
         self.cos = nn.CosineSimilarity(dim=1)
 
+    def _get_logits(self, outputs):
+        return (outputs > self.threshold).float()
+
     def forward(self, input_ids, attention_mask, word_indices):
         first_word_embedding = self._get_embeddings(input_ids[0], attention_mask[0], word_indices[0], add_cls=False)
         second_word_embedding = self._get_embeddings(input_ids[1], attention_mask[1], word_indices[1], add_cls=False)
@@ -120,6 +127,9 @@ class LinearClassifier(GeneralBertClassifier):
         word_embeddings = (first_embeddings[0], second_embeddings[0])
         cls_embeddings = (first_embeddings[1], second_embeddings[1])
         return torch.cat(word_embeddings + cls_embeddings, 1)
+
+    def _get_logits(self, outputs):
+        return (outputs > 0.5).float()
 
     def forward(self, input_ids, attention_mask, word_indices):
         first_embeddings = self._get_embeddings(input_ids[0], attention_mask[0], word_indices[0],

@@ -1,10 +1,6 @@
 import json
 
 
-def _get_predictions(probas, thld):
-    return probas > thld
-
-
 def get_results(probas, thld, dataset):
     ids = dataset.ids
     sentences = dataset.sentences

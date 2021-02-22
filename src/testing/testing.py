@@ -20,7 +20,7 @@ def get_results(probas, thld, dataset):
     return {"test_accuracy": str(test_accuracy), "results": results}
 
 
-def write_outputs(results, model_description, output_dir, validation_accuracy, threshold=0.5):
+def write_outputs(results, model_description, output_dir, validation_accuracy, threshold):
     outputs_path = output_dir + model_description + '_outputs.json'
 
     test_accuracy = results["test_accuracy"]

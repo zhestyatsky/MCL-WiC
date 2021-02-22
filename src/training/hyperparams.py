@@ -1,5 +1,4 @@
 import numpy as np
-import torch
 from sklearn.metrics import roc_curve
 
 from src.training.config import get_config

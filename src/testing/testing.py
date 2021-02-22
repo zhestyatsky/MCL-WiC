@@ -11,7 +11,7 @@ def get_results(probas, thld, dataset):
     test_accuracy = get_accuracy(gold_labels, probas, thld)
 
     results = [
-        {"id": id, "proba": str(proba), "tag": "T" if proba > thld else "F", "sentence1": s1, "sentence2": s2,
+        {"id": id, "proba": str(proba.item()), "tag": "T" if proba > thld else "F", "sentence1": s1, "sentence2": s2,
          "gold_tag": "T" if gold_label == 1 else "F"}
         for
         id, proba, (s1, s2), gold_label in
@@ -20,12 +20,12 @@ def get_results(probas, thld, dataset):
     return {"test_accuracy": str(test_accuracy), "results": results}
 
 
-def write_outputs(outputs, model_description, output_dir, validation_accuracy, threshold=0.5):
+def write_outputs(results, model_description, output_dir, validation_accuracy, threshold=0.5):
     outputs_path = output_dir + model_description + '_outputs.json'
 
-    outputs["validation_accuracy"] = str(validation_accuracy)
-    outputs["model"] = model_description
-    outputs["threshold"] = str(threshold)
+    test_accuracy = results["test_accuracy"]
+    outputs = {"model": model_description, "validation_accuracy": str(validation_accuracy),
+               "test_accuracy": test_accuracy, "threshold": str(threshold), "results": results["results"]}
 
     with open(outputs_path, 'w') as f:
         f.write(json.dumps(outputs, indent=4))

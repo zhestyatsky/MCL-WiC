@@ -1,7 +1,8 @@
 import numpy as np
 import torch
 from pytorch_lightning.metrics import Accuracy
-from sklearn.metrics import roc_curve, roc_auc_score, plot_roc_curve
+from sklearn.metrics import roc_curve
+
 
 def get_threshold_with_acc(labels, proba):
     fpr, tpr, thlds = roc_curve(labels, proba)
@@ -9,4 +10,6 @@ def get_threshold_with_acc(labels, proba):
     thld = thlds[optimal_idx]
     y_pred = (proba > thld).float()
     acc = Accuracy()
-    return thld, acc(y_pred, torch.tensor(labels)).item()
+    acc_value = acc(y_pred, torch.tensor(labels)).item()
+    print("Threshold: {}, Accuracy: {}".format(thld, acc_value))
+    return thld, acc_value

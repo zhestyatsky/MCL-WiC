@@ -11,7 +11,7 @@ def get_results(probas, thld, dataset):
     test_accuracy = get_accuracy(gold_labels, probas, thld)
 
     results = [
-        {"id": id, "proba": str(proba.item()), "tag": "T" if proba > thld else "F", "sentence1": s1, "sentence2": s2,
+        {"id": id, "sentence1": s1, "sentence2": s2, "proba": str(proba.item()), "tag": "T" if proba > thld else "F",
          "gold_tag": "T" if gold_label == 1 else "F"}
         for
         id, proba, (s1, s2), gold_label in

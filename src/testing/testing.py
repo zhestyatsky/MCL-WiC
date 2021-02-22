@@ -6,7 +6,7 @@ def _get_predictions(probas, thld):
 
 
 def get_results(probas, thld, ids):
-    results = [{"id": id, "proba": proba, "tag": "T" if proba > thld else "F"} for id, proba in
+    results = [{"id": id.item(), "proba": proba, "tag": "T" if proba > thld else "F"} for id, proba in
                zip(ids, probas)]
     return results
 

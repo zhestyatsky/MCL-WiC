@@ -60,6 +60,7 @@ def get_train_val_test_df(on_colab=True):
 
     df_train_wic = read_data_wic(WIC_PREFIX + 'training/training.en-en.data', read_tags=True)
     df_dev_wic = read_data_wic(WIC_PREFIX + 'dev/multilingual/dev.en-en.data', read_tags=True)
+    df_test = read_data_wic(WIC_PREFIX + 'test/multilingual/test.en-en.data', read_tags=True)
 
     df_train_superglue = read_data_superglue(SUPERGLUE_PREFIX + 'train/train.data.txt', read_tags=True)
     df_dev_superglue = read_data_superglue(SUPERGLUE_PREFIX + 'dev/dev.data.txt', read_tags=True)
@@ -67,7 +68,5 @@ def get_train_val_test_df(on_colab=True):
     global_df = pd.concat([df_train_wic, df_dev_wic, df_train_superglue, df_dev_superglue], ignore_index=True)
 
     df_train, df_val = lemma_train_test_split(global_df)
-
-    df_test = read_data_wic(WIC_PREFIX + 'test/multilingual/test.en-en.data')
 
     return df_train, df_val, df_test

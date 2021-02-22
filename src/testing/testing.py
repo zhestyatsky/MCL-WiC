@@ -5,21 +5,20 @@ def _get_predictions(probas, thld):
     return probas > thld
 
 
-def get_outputs(probas, thld, ids):
-    preds = _get_predictions(probas, thld)
-    probas_output = [{"id": id, "proba": proba} for id, proba in zip(ids, probas)]
-    preds_output = [{"id": id, "tag": "T" if pred else "F"} for id, pred in zip(ids, preds)]
-    return probas_output, preds_output
+def get_results(probas, thld, ids):
+    results = [{"id": id, "proba": proba, "tag": "T" if proba > thld else "F"} for id, proba in
+               zip(ids, probas)]
+    return results
 
 
-def dump_outputs(probas, thld, ids, output_dir):
-    probas_path = output_dir + 'proba.json'
-    preds_path = output_dir + 'preds.json'
+def write_outputs(results, model_description, output_dir, treshold=0.5):
+    outputs_path = output_dir + model_description + 'outputs.json'
 
-    probas_output, preds_output = get_outputs(probas, thld, ids)
+    outputs = {"model": model_description, "treshold": treshold, "results": results}
 
-    with open(probas_path, 'w') as f:
-        f.write(json.dumps(probas_output))
+    with open(outputs_path, 'w') as f:
+        f.write(json.dumps(outputs))
 
-    with open(preds_path, 'w') as f:
-        f.write(json.dumps(preds_output))
+
+def convert_to_gold(results):
+    return [{"id": sample["id"], "tag": sample["tag"]} for sample in results]

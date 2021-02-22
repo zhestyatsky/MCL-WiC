@@ -11,10 +11,10 @@ def get_results(probas, thld, ids):
     return results
 
 
-def write_outputs(results, model_description, output_dir, treshold=0.5):
+def write_outputs(results, model_description, output_dir, threshold=0.5):
     outputs_path = output_dir + model_description + 'outputs.json'
 
-    outputs = {"model": model_description, "treshold": treshold, "results": results}
+    outputs = {"model": model_description, "threshold": threshold, "results": results}
 
     with open(outputs_path, 'w') as f:
         f.write(json.dumps(outputs))

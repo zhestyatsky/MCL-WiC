@@ -8,7 +8,8 @@ def _get_predictions(probas, thld):
 def get_results(probas, thld, dataset):
     ids = dataset.ids
     sentences = dataset.sentences
-    results = [{"id": id, "proba": proba, "tag": "T" if proba > thld else "F", "sentence1": s1, "sentence2": s2} for
+    results = [{"id": id, "proba": str(proba), "tag": "T" if proba > thld else "F", "sentence1": s1, "sentence2": s2}
+               for
                id, proba, (s1, s2) in
                zip(ids, probas, sentences)]
     return results

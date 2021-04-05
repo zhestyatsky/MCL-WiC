@@ -54,19 +54,33 @@ def lemma_train_test_split(df, test_size=0.025):
     return df_train, df_test
 
 
-def get_train_val_test_df(on_colab=True):
+def get_train_val_dfs_to_include(only_wic, on_colab=True):
     WIC_PREFIX = COLAB_PREFIX + WIC_DATA if on_colab else WIC_DATA
-    SUPERGLUE_PREFIX = COLAB_PREFIX + SUPERGLUE_DATA if on_colab else SUPERGLUE_DATA
 
     df_train_wic = read_data_wic(WIC_PREFIX + 'training/training.en-en.data', read_tags=True)
     df_dev_wic = read_data_wic(WIC_PREFIX + 'dev/multilingual/dev.en-en.data', read_tags=True)
-    df_test = read_data_wic(WIC_PREFIX + 'test/multilingual/test.en-en.data', read_tags=True)
+
+    dfs_to_include = [df_train_wic, df_dev_wic]
+    if only_wic:
+        return dfs_to_include
+
+    SUPERGLUE_PREFIX = COLAB_PREFIX + SUPERGLUE_DATA if on_colab else SUPERGLUE_DATA
 
     df_train_superglue = read_data_superglue(SUPERGLUE_PREFIX + 'train/train.data.txt', read_tags=True)
     df_dev_superglue = read_data_superglue(SUPERGLUE_PREFIX + 'dev/dev.data.txt', read_tags=True)
 
-    global_df = pd.concat([df_train_wic, df_dev_wic, df_train_superglue, df_dev_superglue], ignore_index=True)
+    dfs_to_include.append(df_train_superglue)
+    dfs_to_include.append(df_dev_superglue)
 
-    df_train, df_val = lemma_train_test_split(global_df)
+    return dfs_to_include
+
+
+def get_train_val_test_df(only_wic, on_colab=True):
+    global_train_val_df = pd.concat(get_train_val_dfs_to_include(only_wic=only_wic, on_colab=on_colab),
+                                    ignore_index=True)
+    df_train, df_val = lemma_train_test_split(global_train_val_df)
+
+    WIC_PREFIX = COLAB_PREFIX + WIC_DATA if on_colab else WIC_DATA
+    df_test = read_data_wic(WIC_PREFIX + 'test/multilingual/test.en-en.data', read_tags=True)
 
     return df_train, df_val, df_test

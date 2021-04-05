@@ -26,7 +26,23 @@ VALID_DESCRIPTIONS = {
     "roberta-large-cos_sim-sigmoid",
     "roberta-large-cos_sim-relu",
     "roberta-large-linear-no_cls",
-    "roberta-large-linear-cls"
+    "roberta-large-linear-cls",
+    "bert-base-cos_sim-sigmoid-only_wic",
+    "bert-base-cos_sim-relu-only_wic",
+    "bert-base-linear-no_cls-only_wic",
+    "bert-base-linear-cls-only_wic",
+    "bert-large-cos_sim-sigmoid-only_wic",
+    "bert-large-cos_sim-relu-only_wic",
+    "bert-large-linear-no_cls-only_wic",
+    "bert-large-linear-cls-only_wic",
+    "roberta-base-cos_sim-sigmoid-only_wic",
+    "roberta-base-cos_sim-relu-only_wic",
+    "roberta-base-linear-no_cls-only_wic",
+    "roberta-base-linear-cls-only_wic",
+    "roberta-large-cos_sim-sigmoid-only_wic",
+    "roberta-large-cos_sim-relu-only_wic",
+    "roberta-large-linear-no_cls-only_wic",
+    "roberta-large-linear-cls-only_wic"
 }
 
 
@@ -46,5 +62,10 @@ def get_config(model_description):
         model_config["use_cls"] = False
     else:
         model_config["activation"] = feature
+
+    if len(model_description) == 4:
+        model_config["only_wic"] = False
+    else:
+        model_config["only_wic"] = True
 
     return model_config

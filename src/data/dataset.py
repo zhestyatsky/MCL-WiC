@@ -79,7 +79,7 @@ def get_loader(model_path, df, is_train=False):
 def get_train_val_test_loaders(model_description, on_colab=True):
     model_config = get_config(model_description)
     model_path = model_config["embeddings"]
-    train_df, val_df, test_df = get_train_val_test_df(on_colab=on_colab)
+    train_df, val_df, test_df = get_train_val_test_df(only_wic=model_config["only_wic"], on_colab=on_colab)
     train_loader = get_loader(model_path, train_df, is_train=True)
     val_loader = get_loader(model_path, val_df)
     test_loader = get_loader(model_path, test_df)

@@ -75,12 +75,17 @@ def get_train_val_dfs_to_include(only_wic, on_colab=True):
     return dfs_to_include
 
 
-def get_train_val_test_df(only_wic, on_colab=True):
+def get_train_val_test_df(use_default_datasets, only_wic=False, on_colab=True):
+    WIC_PREFIX = COLAB_PREFIX + WIC_DATA if on_colab else WIC_DATA
+    df_test = read_data_wic(WIC_PREFIX + 'test/multilingual/test.en-en.data', read_tags=True)
+
+    if use_default_datasets:
+        df_train = read_data_wic(WIC_PREFIX + 'training/training.en-en.data', read_tags=True)
+        df_val = read_data_wic(WIC_PREFIX + 'dev/multilingual/dev.en-en.data', read_tags=True)
+        return df_train, df_val, df_test
+
     global_train_val_df = pd.concat(get_train_val_dfs_to_include(only_wic=only_wic, on_colab=on_colab),
                                     ignore_index=True)
     df_train, df_val = lemma_train_test_split(global_train_val_df)
-
-    WIC_PREFIX = COLAB_PREFIX + WIC_DATA if on_colab else WIC_DATA
-    df_test = read_data_wic(WIC_PREFIX + 'test/multilingual/test.en-en.data', read_tags=True)
 
     return df_train, df_val, df_test

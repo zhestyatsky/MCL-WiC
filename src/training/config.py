@@ -42,7 +42,8 @@ VALID_DESCRIPTIONS = {
     "roberta-large-cos_sim-sigmoid-only_wic",
     "roberta-large-cos_sim-relu-only_wic",
     "roberta-large-linear-no_cls-only_wic",
-    "roberta-large-linear-cls-only_wic"
+    "roberta-large-linear-cls-only_wic",
+    "bert-large-cos_sim-relu-use_default_datasets"
 }
 
 
@@ -65,7 +66,16 @@ def get_config(model_description):
 
     if len(model_description) == 4:
         model_config["only_wic"] = False
-    else:
+        model_config["use_default_datasets"] = False
+        return model_config
+
+    dataset_feature = model_description[4]
+
+    if dataset_feature == "only_wic":
         model_config["only_wic"] = True
+        model_config["use_default_datasets"] = False
+    elif dataset_feature == "use_default_datasets":
+        model_config["only_wic"] = False
+        model_config["use_default_datasets"] = True
 
     return model_config

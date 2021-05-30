@@ -9,6 +9,13 @@ WIC_DATA = 'data/MCL-WiC/'
 SUPERGLUE_DATA = 'data/SuperGLUE-WiC/'
 COLAB_PREFIX = '/content/MCL-WiC/'
 
+WIC_TRAIN_SUFFIX = 'training/training.en-en.data'
+WIC_DEV_SUFFIX = 'dev/multilingual/dev.en-en.data'
+WIC_TEST_SUFFIX = 'test/multilingual/test.en-en.data'
+
+SUPERGLUE_TRAIN_SUFFIX = 'train/train.data.txt'
+SUPERGLUE_DEV_SUFFIX = 'dev/dev.data.txt'
+
 
 def read_data_wic(path, read_tags=False):
     with open(path) as f:
@@ -24,7 +31,25 @@ def read_data_wic(path, read_tags=False):
     return df
 
 
-def read_data_superglue(path, read_tags=False):
+def read_wic_train(on_colab=True):
+    WIC_PREFIX = COLAB_PREFIX + WIC_DATA if on_colab else WIC_DATA
+    df = read_data_wic(f'{WIC_PREFIX}{WIC_TRAIN_SUFFIX}', read_tags=True)
+    return df
+
+
+def read_wic_dev(on_colab=True):
+    WIC_PREFIX = COLAB_PREFIX + WIC_DATA if on_colab else WIC_DATA
+    df = read_data_wic(f'{WIC_PREFIX}{WIC_DEV_SUFFIX}', read_tags=True)
+    return df
+
+
+def read_wic_test(on_colab=True):
+    WIC_PREFIX = COLAB_PREFIX + WIC_DATA if on_colab else WIC_DATA
+    df = read_data_wic(f'{WIC_PREFIX}{WIC_TEST_SUFFIX}', read_tags=True)
+    return df
+
+
+def read_data_superglue(path, read_tags=True):
     df = pd.read_csv(path, sep='\t', names=['lemma', 'pos', 'word_indices', 'sentence1', 'sentence2'])
     if read_tags:
         tags_path = path[:path.find('.data.txt')] + '.gold.txt'
@@ -46,6 +71,18 @@ def read_data_superglue(path, read_tags=False):
     return df
 
 
+def read_superglue_train(on_colab=True):
+    SUPERGLUE_PREFIX = COLAB_PREFIX + SUPERGLUE_DATA if on_colab else SUPERGLUE_DATA
+    df = read_data_superglue(f'{SUPERGLUE_PREFIX}{SUPERGLUE_TRAIN_SUFFIX}', read_tags=True)
+    return df
+
+
+def read_superglue_dev(on_colab=True):
+    SUPERGLUE_PREFIX = COLAB_PREFIX + SUPERGLUE_DATA if on_colab else SUPERGLUE_DATA
+    df = read_data_superglue(f'{SUPERGLUE_PREFIX}{SUPERGLUE_DEV_SUFFIX}', read_tags=True)
+    return df
+
+
 def lemma_train_test_split(df, test_size=0.025):
     unique_lemmas = sorted(set(df['lemma'].tolist()))
     train_lemmas, test_lemmas = train_test_split(unique_lemmas, test_size=test_size, random_state=1)
@@ -57,8 +94,8 @@ def lemma_train_test_split(df, test_size=0.025):
 def get_train_val_dfs_to_include(only_wic, on_colab=True):
     WIC_PREFIX = COLAB_PREFIX + WIC_DATA if on_colab else WIC_DATA
 
-    df_train_wic = read_data_wic(WIC_PREFIX + 'training/training.en-en.data', read_tags=True)
-    df_dev_wic = read_data_wic(WIC_PREFIX + 'dev/multilingual/dev.en-en.data', read_tags=True)
+    df_train_wic = read_wic_train(on_colab)
+    df_dev_wic = read_wic_dev(on_colab)
 
     dfs_to_include = [df_train_wic, df_dev_wic]
     if only_wic:
@@ -66,8 +103,8 @@ def get_train_val_dfs_to_include(only_wic, on_colab=True):
 
     SUPERGLUE_PREFIX = COLAB_PREFIX + SUPERGLUE_DATA if on_colab else SUPERGLUE_DATA
 
-    df_train_superglue = read_data_superglue(SUPERGLUE_PREFIX + 'train/train.data.txt', read_tags=True)
-    df_dev_superglue = read_data_superglue(SUPERGLUE_PREFIX + 'dev/dev.data.txt', read_tags=True)
+    df_train_superglue = read_superglue_train(on_colab)
+    df_dev_superglue = read_superglue_dev(on_colab)
 
     dfs_to_include.append(df_train_superglue)
     dfs_to_include.append(df_dev_superglue)
@@ -77,11 +114,11 @@ def get_train_val_dfs_to_include(only_wic, on_colab=True):
 
 def get_train_val_test_df(use_default_datasets, only_wic=False, on_colab=True):
     WIC_PREFIX = COLAB_PREFIX + WIC_DATA if on_colab else WIC_DATA
-    df_test = read_data_wic(WIC_PREFIX + 'test/multilingual/test.en-en.data', read_tags=True)
+    df_test = read_wic_test(on_colab)
 
     if use_default_datasets:
-        df_train = read_data_wic(WIC_PREFIX + 'training/training.en-en.data', read_tags=True)
-        df_val = read_data_wic(WIC_PREFIX + 'dev/multilingual/dev.en-en.data', read_tags=True)
+        df_train = read_wic_train(on_colab)
+        df_val = read_wic_dev(on_colab)
         return df_train, df_val, df_test
 
     global_train_val_df = pd.concat(get_train_val_dfs_to_include(only_wic=only_wic, on_colab=on_colab),
